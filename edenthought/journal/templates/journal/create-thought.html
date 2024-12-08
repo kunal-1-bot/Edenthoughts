@@ -1,0 +1,40 @@
+{% extends 'journal/navbar.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <head>
+
+        <title> Create | Thought </title>
+
+    </head>
+
+    <div class ="container  bg-white shadow-md p-5 form-layout">
+
+        <h3>Create thought</h3>
+
+        <p>you can create thought below:</p>
+        
+        
+        <br>
+        <br>
+
+        <form method ="POST"autocomplete ="off">
+            {% csrf_token %}
+    
+            {{CreateThoughtForm|crispy}}
+    
+            <br> 
+    
+            <button class="btn btn-outline-primary btn-md w-100 btn-block p-3" type = "submit"> <i class="fa fa-plus" aria-hidden="true"></i> &nbsp; Create thought </button>
+    
+    
+        </form>
+
+    </div>
+
+    <br>
+
+   
+{% endblock %}
